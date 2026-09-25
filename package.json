@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "name": "cprg_306_advanced-javascript-and-tailwind-css",
+  "version": "1.0.0",
+  "description": "When you are writing code, make sure it is in your branch, and then make a pull request to merge it with main.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatthewScarrott/CPRG_306_Advanced-JavaScript-and-Tailwind-CSS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MatthewScarrott/CPRG_306_Advanced-JavaScript-and-Tailwind-CSS/issues"
+  },
+  "homepage": "https://github.com/MatthewScarrott/CPRG_306_Advanced-JavaScript-and-Tailwind-CSS#readme"
+}
