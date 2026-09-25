@@ -20,11 +20,13 @@
             Convert anything, instantly
         </h2>
         <p class="text-base text-slate-600 mt-3 max-w-xl mx-auto">
-            Three small tools for the units you actually run into: weight, distance and volume.
+            Three small tools for the units you actually run into: weight, distance and temperature.
         </p>
     </section>
     <main class="max-w-5xl mx-auto px-6 pb-16">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            // weight converter card
             <div class="bg-white rounded-2xl shadow-md p-6">
                 <h3 class="text-lg font-bold text-slate-900">Weight</h3>
                 <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
@@ -50,6 +52,8 @@
                     <p id="kg-result" class="text-2xl font-bold text-blue-600 mt-1">0.00</p>
                 </div>
             </div>
+
+            // distance converter card
             <div class="bg-white rounded-2xl shadow-md p-6">
                 <h3 class="text-lg font-bold text-slate-900">Distance</h3>
                 <p class="text-sm text-slate-500 mt-1">Miles to kilometres</p>
@@ -75,29 +79,31 @@
                     <p id="miles-result" class="text-2xl font-bold text-emerald-600 mt-1">0.00</p>
                 </div>
             </div>
+
+            // temperature converter card
             <div class="bg-white rounded-2xl shadow-md p-6">
-                <h3 class="text-lg font-bold text-slate-900">Volume</h3>
-                <p class="text-sm text-slate-500 mt-1">Litres to US gallons</p>
-                <label for="litres-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
-                    Litres
+                <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
+                <p class="text-sm text-slate-500 mt-1">Celsius to Fahrenheit</p>
+                <label for="celsius-input" class="block text-sm font-medium text-slate-700 mt-5 mb-2">
+                    Celsius
                 </label>
                 <input
-                    id="litres-input"
+                    id="celsius-input"
                     type="number"
                     value="0"
                     class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900
                     focus:border-violet-500 focus:outline-none"
                 />
                 <button
-                    id="litres-button"
+                    id="celsius-button"
                     class="w-full mt-4 rounded-lg bg-violet-600 px-4 py-2 font-semibold text-white
                     hover:bg-violet-700 transition cursor-pointer"
                 >
                     Convert
                 </button>
                 <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-                    <p class="text-xs uppercase tracking-wide text-slate-500">US Gallons</p>
-                    <p id="litres-result" class="text-2xl font-bold text-violet-600 mt-1">0.00</p>
+                    <p class="text-xs uppercase tracking-wide text-slate-500">Fahrenheit</p>
+                    <p id="celsius-result" class="text-2xl font-bold text-violet-600 mt-1">0.00</p>
                 </div>
             </div>
         </div>
