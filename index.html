@@ -1,12 +1,21 @@
 <!doctype html>
+<!--
+    Program:  Unit Converter (CPRG 306 Assignment 1)
+    Group:    Group 12
+    Authors:  Mary Ann Coloma, Ryan Dezall, Matthew Scarrott
+    Date:     September 28, 2026
+    Page for converting weight, distance and temperature between metric
+    and imperial units. Each navbar tab shows two converter forms.
+-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Unit Converter</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="bg-slate-100 min-h-screen">
+    <!-- Header and navbar tabs -->
     <header class="bg-white border-b border-slate-200">
       <div
         class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between"
@@ -18,7 +27,29 @@
           CPRG 306 &middot; Assignment 1
         </span>
       </div>
+      <nav class="max-w-5xl mx-auto px-6 pb-4 flex gap-2">
+        <button
+          id="weight-tab"
+          class="rounded-lg px-4 py-2 font-semibold bg-blue-600 text-white cursor-pointer"
+        >
+          Weight
+        </button>
+        <button
+          id="distance-tab"
+          class="rounded-lg px-4 py-2 font-semibold cursor-pointer"
+        >
+          Distance
+        </button>
+        <button
+          id="temperature-tab"
+          class="rounded-lg px-4 py-2 font-semibold cursor-pointer"
+        >
+          Temperature
+        </button>
+      </nav>
     </header>
+
+    <!-- Intro section -->
     <section class="max-w-5xl mx-auto px-6 pt-12 pb-8 text-center">
       <h2 class="text-3xl sm:text-4xl font-bold text-slate-900">
         Convert anything, instantly
@@ -28,9 +59,11 @@
         and temperature.
       </p>
     </section>
+
     <main class="max-w-5xl mx-auto px-6 pb-16">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-6">
-        <!-- kg to lbs card -->
+      <!-- Weight tab: kg to lbs and lbs to kg -->
+      <section id="weight-panel" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Kilograms to pounds card -->
         <div class="bg-blue-100 rounded-2xl shadow-md p-6">
           <h3 class="text-lg font-bold text-slate-900">Weight</h3>
           <p class="text-sm text-slate-500 mt-1">Kilograms to pounds</p>
@@ -54,16 +87,51 @@
           </button>
           <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
             <p class="text-xs uppercase tracking-wide text-slate-500">Pounds</p>
-            <p
-              id="kg-result"
-              class="text-2xl font-bold text-blue-600 mt-1 break-words"
-            >
+            <p id="kg-result" class="text-2xl font-bold text-blue-600 mt-1">
               0.00
             </p>
           </div>
         </div>
 
-        <!--miles to km-->
+        <!-- Pounds to kilograms card -->
+        <div class="bg-blue-100 rounded-2xl shadow-md p-6">
+          <h3 class="text-lg font-bold text-slate-900">Weight</h3>
+          <p class="text-sm text-slate-500 mt-1">Pounds to kilograms</p>
+          <label
+            for="lbs-input"
+            class="block text-sm font-medium text-slate-700 mt-5 mb-2"
+          >
+            Pounds
+          </label>
+          <input
+            id="lbs-input"
+            type="text"
+            placeholder="e.g. 0 or 0, 24, 50"
+            class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"
+          />
+          <button
+            id="lbs-button"
+            class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition cursor-pointer"
+          >
+            Convert
+          </button>
+          <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+            <p class="text-xs uppercase tracking-wide text-slate-500">
+              Kilograms
+            </p>
+            <p id="lbs-result" class="text-2xl font-bold text-blue-600 mt-1">
+              0.00
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Distance tab: miles to km and km to miles -->
+      <section
+        id="distance-panel"
+        class="hidden grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <!-- Miles to kilometres card -->
         <div class="bg-green-100 rounded-2xl shadow-md p-6">
           <h3 class="text-lg font-bold text-slate-900">Distance</h3>
           <p class="text-sm text-slate-500 mt-1">Miles to kilometres</p>
@@ -91,14 +159,50 @@
             </p>
             <p
               id="miles-result"
-              class="text-2xl font-bold text-emerald-600 mt-1 break-words"
+              class="text-2xl font-bold text-emerald-600 mt-1"
             >
               0.00
             </p>
           </div>
         </div>
 
-        <!--temperature converter card-->
+        <!-- Kilometres to miles card -->
+        <div class="bg-green-100 rounded-2xl shadow-md p-6">
+          <h3 class="text-lg font-bold text-slate-900">Distance</h3>
+          <p class="text-sm text-slate-500 mt-1">Kilometres to miles</p>
+          <label
+            for="km-input"
+            class="block text-sm font-medium text-slate-700 mt-5 mb-2"
+          >
+            Kilometres
+          </label>
+          <input
+            id="km-input"
+            type="text"
+            placeholder="e.g. 0 or 0, 24, 50"
+            class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-emerald-500 focus:outline-none"
+          />
+          <button
+            id="km-button"
+            class="w-full mt-4 rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white hover:bg-emerald-700 transition cursor-pointer"
+          >
+            Convert
+          </button>
+          <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
+            <p class="text-xs uppercase tracking-wide text-slate-500">Miles</p>
+            <p id="km-result" class="text-2xl font-bold text-emerald-600 mt-1">
+              0.00
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Temperature tab: Celsius to Fahrenheit and Fahrenheit to Celsius -->
+      <section
+        id="temperature-panel"
+        class="hidden grid grid-cols-1 md:grid-cols-2 gap-6"
+      >
+        <!-- Celsius to Fahrenheit card -->
         <div class="bg-purple-100 rounded-2xl shadow-md p-6">
           <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
           <p class="text-sm text-slate-500 mt-1">Celsius to Fahrenheit</p>
@@ -126,82 +230,14 @@
             </p>
             <p
               id="celsius-result"
-              class="text-2xl font-bold text-violet-600 mt-1 break-words"
+              class="text-2xl font-bold text-violet-600 mt-1"
             >
               0.00
             </p>
           </div>
         </div>
 
-        <!-- lbs to kgs -->
-        <div class="bg-blue-100 rounded-2xl shadow-md p-6">
-          <h3 class="text-lg font-bold text-slate-900">Weight</h3>
-          <p class="text-sm text-slate-500 mt-1">Pounds to kilograms</p>
-          <label
-            for="lbs-input"
-            class="block text-sm font-medium text-slate-700 mt-5 mb-2"
-          >
-            Pounds
-          </label>
-          <input
-            id="lbs-input"
-            type="text"
-            placeholder="e.g. 0 or 0, 24, 50"
-            class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-blue-500 focus:outline-none"
-          />
-          <button
-            id="lbs-button"
-            class="w-full mt-4 rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white hover:bg-blue-700 transition cursor-pointer"
-          >
-            Convert
-          </button>
-          <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-            <p class="text-xs uppercase tracking-wide text-slate-500">
-              Kilograms
-            </p>
-            <p
-              id="lbs-result"
-              class="text-2xl font-bold text-blue-600 mt-1 break-words"
-            >
-              0.00
-            </p>
-          </div>
-        </div>
-
-        <!-- km to miles-->
-        <div class="bg-green-100 rounded-2xl shadow-md p-6">
-          <h3 class="text-lg font-bold text-slate-900">Distance</h3>
-          <p class="text-sm text-slate-500 mt-1">Kilometers to miles</p>
-          <label
-            for="km-input"
-            class="block text-sm font-medium text-slate-700 mt-5 mb-2"
-          >
-            Kilometers
-          </label>
-          <input
-            id="km-input"
-            type="text"
-            placeholder="e.g. 0 or 0, 24, 50"
-            class="w-full rounded-lg border border-slate-300 px-4 py-2 text-slate-900 focus:border-emerald-500 focus:outline-none"
-          />
-          <button
-            id="km-button"
-            class="w-full mt-4 rounded-lg bg-emerald-600 px-4 py-2 font-semibold text-white hover:bg-emerald-700 transition cursor-pointer"
-          >
-            Convert
-          </button>
-          <div class="mt-5 rounded-lg bg-slate-50 p-4 text-center">
-            <p class="text-xs uppercase tracking-wide text-slate-500">Miles</p>
-            <p
-              id="km-result"
-              class="text-2xl font-bold text-emerald-600 mt-1 break-words"
-            >
-              0.00
-            </p>
-          </div>
-        </div>
-
-        <!--Fahrenheit to Celsius-->
+        <!-- Fahrenheit to Celsius card -->
         <div class="bg-purple-100 rounded-2xl shadow-md p-6">
           <h3 class="text-lg font-bold text-slate-900">Temperature</h3>
           <p class="text-sm text-slate-500 mt-1">Fahrenheit to Celsius</p>
@@ -229,14 +265,16 @@
             </p>
             <p
               id="fahrenheit-result"
-              class="text-2xl font-bold text-violet-600 mt-1 break-words"
+              class="text-2xl font-bold text-violet-600 mt-1"
             >
               0.00
             </p>
           </div>
         </div>
-      </div>
+      </section>
     </main>
+
+    <!-- Footer -->
     <footer class="bg-white border-t border-slate-200">
       <div class="max-w-5xl mx-auto px-6 py-6 text-center">
         <p class="text-sm text-slate-500">
@@ -245,6 +283,7 @@
         </p>
       </div>
     </footer>
+
     <script src="main.js"></script>
   </body>
 </html>
